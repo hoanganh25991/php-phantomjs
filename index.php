@@ -30,3 +30,6 @@ if(DIRECTORY_SEPARATOR == "\\"){
 }
 $client->getEngine()->setPath($phantomJsPath);
 $client->send($request, $response);
+
+echo "success";
+die;
