@@ -24,6 +24,9 @@ $response = $client->getMessageFactory()->createResponse();
 
 // Send the request
 /* setPath to phantomjs, this deal with Windows error not found executable file*/
-$phantomJsPath = __DIR__ . "/bin/phantomjs.exe";
+$phantomJsPath = "/bin/phantomjs";
+if(DIRECTORY_SEPARATOR == "\\"){
+    $phantomJsPath = __DIR__ . "/bin/phantomjs.exe";
+}
 $client->getEngine()->setPath($phantomJsPath);
 $client->send($request, $response);
