@@ -5,6 +5,8 @@ use JonnyW\PhantomJs\Client;
 
 $client = Client::getInstance();
 
+echo "hello"; die;
+
 /**
  * @see JonnyW\PhantomJs\Http\PdfRequest
  **/
