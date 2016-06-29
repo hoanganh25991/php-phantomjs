@@ -11,21 +11,22 @@ var_dump("client instance");
  * @see JonnyW\PhantomJs\Http\PdfRequest
  **/
 $request = $client->getMessageFactory()->createPdfRequest('https://github.com', 'GET');
-//chdir("abc");
-//$pdfFilePath = "document.pdf";
-//$request->setOutputFile($pdfFilePath);
-//$request->setFormat('A4');
-//$request->setOrientation('landscape');
-//$request->setMargin('1cm');
-//var_dump("set option");
+chdir("abc");
+$pdfFilePath = "document.pdf";
+$request->setOutputFile($pdfFilePath);
+$request->setFormat('A4');
+$request->setOrientation('landscape');
+$request->setMargin('1cm');
+var_dump("set option");
 
-$width = 800;
-$height = 600;
-$top = 0;
-$left = 0;
-$request->setOutputFile('file.jpg');
-$request->setViewportSize($width, $height);
-$request->setCaptureDimensions($width, $height, $top, $left);
+/* test render image */
+//$width = 800;
+//$height = 600;
+//$top = 0;
+//$left = 0;
+//$request->setOutputFile('file.jpg');
+//$request->setViewportSize($width, $height);
+//$request->setCaptureDimensions($width, $height, $top, $left);
 
 /**
  * @see JonnyW\PhantomJs\Http\Response
