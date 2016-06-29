@@ -19,10 +19,10 @@ $request = $client->getMessageFactory()->createPdfRequest('https://github.com', 
 //$request->setMargin('1cm');
 //var_dump("set option");
 
-$width  = 800;
+$width = 800;
 $height = 600;
-$top    = 0;
-$left   = 0;
+$top = 0;
+$left = 0;
 $request->setOutputFile('file.jpg');
 $request->setViewportSize($width, $height);
 $request->setCaptureDimensions($width, $height, $top, $left);
@@ -36,9 +36,9 @@ $response = $client->getMessageFactory()->createResponse();
 /* setPath to phantomjs, this deal with Windows error not found executable file*/
 $phantomJsPath = "/bin/phantomjs";
 if(DIRECTORY_SEPARATOR == "\\"){
-    $phantomJsPath = __DIR__ . "/bin/phantomjs.exe";
+    $phantomJsPath = "/bin/phantomjs.exe";
 }
-$client->getEngine()->setPath($phantomJsPath);
+$client->getEngine()->setPath(__DIR__ . $phantomJsPath);
 
 /* get request, build reponse to pdf */
 $client->send($request, $response);
