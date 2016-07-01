@@ -2,7 +2,10 @@
 namespace Redoc;
 require_once __DIR__ . "/vendor/autoload.php";
 use JonnyW\PhantomJs\Client;
-
+$a = 10;
+$b = ["proxy" => "remote debug"];
+var_dump($b);
+echo $a;
 $client = Client::getInstance();
 var_dump("client instance");
 
